@@ -1,2 +1,7 @@
-# agar.io_desing-patterns
-build agar.io game using software desing patterns
+# Implementación AGAR.IO  Grupo 6
+
+Ingry Nathaly Salamanca Rativa
+Elkin Ortiz Salazar
+Julio Cesar Morales Torres
+
+
