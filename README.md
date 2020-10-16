@@ -6,7 +6,7 @@
 
 > Elkin Ortiz Salazar
 
-Uno o dos párrafos sobre tu producto y el problema que resuelve.
+Implementación del juego AGAR.IO en python utilizando los patrones de diseño de software Object Pool, Builder y Observer para implementación según diagrama
 
 ![](header.png)
 
