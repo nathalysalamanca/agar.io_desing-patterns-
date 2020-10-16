@@ -8,7 +8,7 @@
 
 Uno o dos párrafos sobre tu producto y el problema que resuelve.
 
-![](../header.png)
+![](../Agario V2.png)
 
 ## Instalación
 
