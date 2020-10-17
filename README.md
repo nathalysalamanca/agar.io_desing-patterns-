@@ -18,13 +18,21 @@ Implementación del juego AGAR.IO en python utilizando los patrones de diseño d
 ![](imágenes/object.png)
 ## Observer y Builder
 ```sh
-Este patron de comportamiento permite definir un mecanismos de suscripcion para notificar varios objetos sobre cualquier evento.
+Este patron de comportamiento permite definir un mecanismos de suscripcion para notificar 
+varios objetos sobre cualquier evento.
 El problema a solucionar:
-Consite en poder detectar cuando un nuevo jugador se conecta o inicia una partida, seria tedioso tanto para el servidor como para el cliente estar enviando la solcitud  de conexion y entregando la respesra de inicio de partida.
+Consite en poder detectar cuando un nuevo jugador se conecta o inicia una partida, 
+seria tedioso tanto para el servidor como para el cliente estar enviando la solcitud  
+de conexion y entregando la respesra de inicio de partida.
 Solucion: 
-En este caso, se crea un objeto notificador "event Game", quien tiene como funcion principal llevar el control de los jugadores que estan en cuego y los puntajes, permitiendo a nuevos jugadores o a los jugadores actualaes llevar un control independiente de su puntaje e informando el control de tiempo restante de la partida.
+En este caso, se crea un objeto notificador "event Game", quien tiene como funcion 
+principal llevar el control de los jugadores que estan en cuego y los puntajes, 
+permitiendo a nuevos jugadores o a los jugadores actualaes llevar un control 
+independiente de su puntaje e informando el control de tiempo restante de la partida.
 
-El patrón Observer sugiere que añadas un mecanismo de suscripción a la clase notificadora para que los objetos individuales puedan suscribirse o cancelar su suscripción a un flujo de eventos que proviene de esa notificadora.
+El patrón Observer sugiere que añadas un mecanismo de suscripción a la clase notificadora
+para que los objetos individuales puedan suscribirse o cancelar su suscripción a un flujo 
+de eventos que proviene de esa notificadora.
 ```
 ![](imágenes/observer.png)
 
