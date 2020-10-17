@@ -26,8 +26,19 @@ verificación de configuración
 Inicio de partida
 ```
 ![](imágenes/terminal2.png)
+```sh
+Configuración del servidor
+```
 ![](imágenes/terminal3.png)
+```sh
+Configuración cliente
+```
+![](imágenes/configuracion.png)
+```sh
+Inicio de partida
+```
 ![](imágenes/juego.png)
+
 
 ## Ejemplo de uso
 
