@@ -45,8 +45,8 @@ Solución:
 EL patrón Builder nos sugiere sacar el código de construcción del objetivo de su propia clase y segregarlos en constructores
 independientes esto lo hacen por medio de una clase directora la cual escucha está pendiente de ciertos eventos o paso y 
 cuando estos se cumpla, define la forma y el momento de comenzar la construcción de los nuevos objetos.
-Para la construcción del AGARIO, el role de la clase directora lo ocupa la clase "Creador", este, se encargara de verificar 
-la cantidad de existente en el lienzo de los objetos “food” y “virus”, y de la mano del patrón de diseño Pool; crear y reubicar
+Para la construcción del AGAR.IO, el rol de la clase directora lo ocupa la clase "Creador", este, se encargara de verificar 
+la cantidad existente en el lienzo de los objetos “food” y “virus”, y de la mano del patrón de diseño Pool; crear y reubicar
 los objetos en el tablero "Lienzo".
 ```
 ![Object Pool and Builder](imágenes/object.png | width=100)
