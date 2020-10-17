@@ -22,10 +22,7 @@ Windows:
 verificación de configuración
 ```
 ![](imágenes/terminal1.png)
-```sh
-Inicio de partida
-```
-![](imágenes/terminal2.png)
+
 ```sh
 Configuración del servidor
 ```
@@ -36,6 +33,10 @@ Configuración cliente
 ![](imágenes/configuracion.png)
 ```sh
 Inicio de partida
+```
+![](imágenes/terminal2.png)
+
+```sh
 ```
 ![](imágenes/juego.png)
 
