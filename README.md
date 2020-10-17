@@ -12,36 +12,44 @@ Implementación del juego AGAR.IO en python utilizando los patrones de diseño d
 
 ## Object Pool y Builder
 ```sh
-La asignación de memoria de los videojuegos es un tema fundamental porque tiene un impacto en el rendimiento y determina la rapidez con la 
-que el usuario lo percibe. Hardware como teléfonos móviles y tabletas tienen recursos limitados en comparación con una PC y en algunos casos,
-se debe evaluar si la gestión que brinda el lenguaje de programación es adecuada para nuestros objetivos.
+La asignación de memoria de los videojuegos es un tema fundamental porque tiene un impacto en el rendimiento y determina la rapidez 
+con la que el usuario lo percibe. Hardware como teléfonos móviles y tabletas tienen recursos limitados en comparación con una PC y 
+en algunos casos,se debe evaluar si la gestión que brinda el lenguaje de programación es adecuada para nuestros objetivos.
 
-Por ejemplo, si estamos en las siguientes condiciones:debes asignar y destruir cientos de miles de objetos durante el juego;los objetos tienen 
-la misma naturaleza; en un período de tiempo dado, solo es necesario un número limitado de estos objetos.
-Entonces puede ser útil organizar un número fijo de estos objetos, que llamaremos Object Pool, y en lugar de crearlos y destruirlos continuamente, 
-simplemente los usamos y los volvemos a poner en el pool según sea necesario.
+Por ejemplo, si estamos en las siguientes condiciones:debes asignar y destruir cientos de miles de objetos durante el juego; los 
+objetos tienen la misma naturaleza; en un período de tiempo dado, solo es necesario un número limitado de estos objetos.
+Entonces puede ser útil organizar un número fijo de estos objetos, que llamaremos Object Pool, y en lugar de crearlos y 
+destruirlos continuamente, simplemente los usamos y los volvemos a poner en el pool según sea necesario.
 
-Un enfoque como este no solo aumenta el rendimiento porque no crea objetos cada vez, sino que también evita la fragmentación del Heap y la ejecución
-continua del recolector de basura que podría provocar retrasos.
+Un enfoque como este no solo aumenta el rendimiento porque no crea objetos cada vez, sino que también evita la fragmentación del 
+Heap y la ejecucióncontinua del recolector de basura que podría provocar retrasos.
 
-La administración de un grupo de objetos obviamente complica el código fuente y, por lo tanto, su capacidad de mantenimiento, por lo que debe usarse 
-si y solo si las 3 condiciones vistas arriba son verdaderas.
+La administración de un grupo de objetos obviamente complica el código fuente y, por lo tanto, su capacidad de mantenimiento,
+por lo que debe usarse si y solo si las 3 condiciones vistas arriba son verdaderas.
+
+En nuestro caso AGAR.IO, requiere usar muchas instancias de los alimentos y virus constantemente, en los cuales se hace una 
+destrucción cuando el alimento es comido por una celula y creación ya que los alimentos, así como son destruidos también son
+creados en el transcurso del juego así que lo que buscamos optimizar con este patrón es que las instancias sean finitas  desde
+el inicio del juego y cuando se ejecute la función alimentar por parte de una célula que representa un jugador, esa instancia
+del alimento sea liberada para asignarle unas nuevas coordenadas y así no tener que crear unas nuevas optimizando el manejo
+de memoria del dispositivo
 
 ```
 ![](imágenes/object.png)
 ## Observer
 ```sh
-Este patron de comportamiento permite definir un mecanismos de suscripcion para notificar varios objetos sobre cualquier evento.
+Este patron de comportamiento permite definir un mecanismos de suscripcion para notificar varios objetos sobre
+cualquier evento.
 El problema a solucionar:
-Consite en poder detectar cuando un nuevo jugador se conecta o inicia una partida, seria tedioso tanto para el servidor como para el cliente estar
-enviando la solcitud de conexion y entregando la respesra de inicio de partida.
+Consite en poder detectar cuando un nuevo jugador se conecta o inicia una partida, seria tedioso tanto para el servidor
+como para el cliente estar enviando la solcitud de conexion y entregando la respesra de inicio de partida.
 Solucion: 
-En este caso, se crea un objeto notificador "event Game", quien tiene como funcion principal llevar el control de los jugadores que estan en juego 
-y los puntajes, permitiendo a nuevos jugadores o a los jugadores actualaes llevar un control independiente de su puntaje e informando el control 
-de tiempo restante de la partida.
+En este caso, se crea un objeto notificador "event Game", quien tiene como funcion principal llevar el control de los 
+jugadores que estan en juego y los puntajes, permitiendo a nuevos jugadores o a los jugadores actualaes llevar un control
+independiente de su puntaje e informando el control de tiempo restante de la partida.
 
-El patrón Observer sugiere que añadas un mecanismo de suscripción a la clase notificadora para que los objetos individuales puedan suscribirse o 
-cancelar su suscripción a un flujo de eventos que proviene de esa notificadora.
+El patrón Observer sugiere que añadas un mecanismo de suscripción a la clase notificadora para que los objetos individuales
+puedan suscribirse o cancelar su suscripción a un flujo de eventos que proviene de esa notificadora.
 ```
 ![](imágenes/observer.png)
 
