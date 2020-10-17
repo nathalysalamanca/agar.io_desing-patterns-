@@ -13,7 +13,7 @@ Implementación del juego AGAR.IO en python utilizando los patrones de diseño d
 ## Entorno para Ejecución.
 
 ### Python versión 3.7.0 o superior
-### PyGame  
+![](imágenes/python.png)
 ![](imágenes/pygame.png)
 
 ```sh
