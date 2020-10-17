@@ -14,7 +14,7 @@ Implementación del juego AGAR.IO en python utilizando los patrones de diseño d
 
 ### Python versión 3.7.0 o superior
 ### PyGame  
-![]./(pygame.png)
+![](imágenes/pygame.png)
 
 ```sh
 npm install my-crazy-module --save
