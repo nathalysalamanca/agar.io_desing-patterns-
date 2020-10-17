@@ -17,7 +17,7 @@ Implementación del juego AGAR.IO en python utilizando los patrones de diseño d
 ![](imágenes/pygame.png)
 
 ```sh
-npm install my-crazy-module --save
+python -version --save
 ```
 
 Windows:
