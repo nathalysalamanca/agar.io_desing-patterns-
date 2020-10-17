@@ -8,11 +8,13 @@
 
 Implementación del juego AGAR.IO en python utilizando los patrones de diseño de software Object Pool, Builder y Observer para implementación según diagrama
 
-![](header.png)
+![]imagenes/(header.png)
 
-## Instalación
+## Entorno para Ejecución.
 
-OS X y Linux:
+### Python versión 3.7.0 o superior
+### PyGame  
+![]./(pygame.png)
 
 ```sh
 npm install my-crazy-module --save
