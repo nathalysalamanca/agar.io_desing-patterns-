@@ -49,7 +49,7 @@ Para la construcción del AGAR.IO, el rol de la clase directora lo ocupa la clas
 la cantidad existente en el lienzo de los objetos “food” y “virus”, y de la mano del patrón de diseño Pool; crear y reubicar
 los objetos en el tablero "Lienzo".
 ```
-![Object Pool and Builder](imágenes/object.png | width=100)
+![Object Pool and Builder](imágenes/object.png)
 ## Observer
 ```sh
 Este patron de comportamiento permite definir un mecanismos de suscripcion para notificar varios objetos sobre
