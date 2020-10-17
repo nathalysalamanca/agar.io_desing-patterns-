@@ -10,6 +10,15 @@ Implementación del juego AGAR.IO en python utilizando los patrones de diseño d
 
 ![](imágenes/header.png)
 
+## Object Pool
+```sh
+```
+![](imágenes/object.png)
+## Observer
+```sh
+```
+![](imágenes/observer.png)
+
 ## Entorno para Ejecución.
 
 ### Python versión 3.7.0 o superior
