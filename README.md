@@ -19,12 +19,15 @@ Implementación del juego AGAR.IO en python utilizando los patrones de diseño d
 Windows:
 
 ```sh
-edit autoexec.bat
+verificación de configuración
 ```
 ![](imágenes/terminal1.png)
+```sh
+Inicio de partida
+```
 ![](imágenes/terminal2.png)
 ![](imágenes/terminal3.png)
-
+![](imágenes/juego.png)
 
 ## Ejemplo de uso
 
