@@ -12,11 +12,22 @@ Implementación del juego AGAR.IO en python utilizando los patrones de diseño d
 
 ## Object Pool
 ```sh
+La asignación de memoria de los videojuegos es un tema fundamental porque tiene un impacto en el rendimiento y determina la rapidez con la que el usuario lo percibe. Hardware como teléfonos móviles y tabletas tienen recursos limitados en comparación con una PC y en algunos casos, se debe evaluar si la gestión que brinda el lenguaje de programación es adecuada para nuestros objetivos.
 
+Por ejemplo, si estamos en las siguientes condiciones:
+
+debes asignar y destruir cientos de miles de objetos durante el juego;
+los objetos tienen la misma naturaleza;
+en un período de tiempo dado, solo es necesario un número limitado de estos objetos.
+Entonces puede ser útil organizar un número fijo de estos objetos, que llamaremos Object Pool, y en lugar de crearlos y destruirlos continuamente, simplemente los usamos y los volvemos a poner en el pool según sea necesario.
+
+Un enfoque como este no solo aumenta el rendimiento porque no crea objetos cada vez, sino que también evita la fragmentación del Heap y la ejecución continua del recolector de basura que podría provocar retrasos.
+
+La administración de un grupo de objetos obviamente complica el código fuente y, por lo tanto, su capacidad de mantenimiento, por lo que debe usarse si y solo si las 3 condiciones vistas arriba son verdaderas.
 
 ```
 ![](imágenes/object.png)
-## Observer y Builder
+## Observer
 ```sh
 Este patron de comportamiento permite definir un mecanismos de suscripcion para notificar 
 varios objetos sobre cualquier evento.
@@ -26,7 +37,7 @@ seria tedioso tanto para el servidor como para el cliente estar enviando la solc
 de conexion y entregando la respesra de inicio de partida.
 Solucion: 
 En este caso, se crea un objeto notificador "event Game", quien tiene como funcion 
-principal llevar el control de los jugadores que estan en cuego y los puntajes, 
+principal llevar el control de los jugadores que estan en juego y los puntajes, 
 permitiendo a nuevos jugadores o a los jugadores actualaes llevar un control 
 independiente de su puntaje e informando el control de tiempo restante de la partida.
 
