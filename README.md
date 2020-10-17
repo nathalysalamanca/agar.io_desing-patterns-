@@ -33,9 +33,23 @@ creados en el transcurso del juego así que lo que buscamos optimizar con este p
 el inicio del juego y cuando se ejecute la función alimentar por parte de una célula que representa un jugador, esa instancia
 del alimento sea liberada para asignarle unas nuevas coordenadas y así no tener que crear unas nuevas optimizando el manejo
 de memoria del dispositivo
-
+Builder:
+Es un patrón de diseño creacional, permite construir objetos complejos. El patrón nos permite 
+producir distintos tipos y representaciones de un objeto empleando el mismo código de construcción.
+Problema para solucionar:
+En el juego se requieren crear objetos de tipo comida para que el jugador crezca en tamaño y virus para que el jugador se 
+divida en partes, construirlos puede ser una tarea laboriosa dado que cada vez que se consuma un grupo de elementos se deben
+crear nuevos objetos, de no usarse este patrón se deberá sobrecargar el constructor con n cantidad y parámetros para 
+multiplicar los objetos.
+Solución:
+EL patrón Builder nos sugiere sacar el código de construcción del objetivo de su propia clase y segregarlos en constructores
+independientes esto lo hacen por medio de una clase directora la cual escucha está pendiente de ciertos eventos o paso y 
+cuando estos se cumpla, define la forma y el momento de comenzar la construcción de los nuevos objetos.
+Para la construcción del AGARIO, el role de la clase directora lo ocupa la clase "Creador", este, se encargara de verificar 
+la cantidad de existente en el lienzo de los objetos “food” y “virus”, y de la mano del patrón de diseño Pool; crear y reubicar
+los objetos en el tablero "Lienzo".
 ```
-![](imágenes/object.png)
+![Object Pool and Builder](imágenes/object.png | width=100)
 ## Observer
 ```sh
 Este patron de comportamiento permite definir un mecanismos de suscripcion para notificar varios objetos sobre
@@ -54,11 +68,9 @@ puedan suscribirse o cancelar su suscripción a un flujo de eventos que proviene
 ![](imágenes/observer.png)
 
 ## Entorno para Ejecución.
-
 ### Python versión 3.7.0 o superior
 ![](imágenes/python.png)
 ![](imágenes/pygame.png)
-
 Windows:
 ```sh
 verificación de configuración
