@@ -20,10 +20,11 @@ Windows:
 
 ```sh
 edit autoexec.bat
+```
 ![](imágenes/terminal1.png)
 ![](imágenes/terminal2.png)
 ![](imágenes/terminal3.png)
-```
+
 
 ## Ejemplo de uso
 
