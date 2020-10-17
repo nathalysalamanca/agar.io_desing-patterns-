@@ -16,14 +16,13 @@ Implementación del juego AGAR.IO en python utilizando los patrones de diseño d
 ![](imágenes/python.png)
 ![](imágenes/pygame.png)
 
-```sh
-python -version --save
-```
-
 Windows:
 
 ```sh
 edit autoexec.bat
+![](imágenes/terminal1.png)
+![](imágenes/terminal2.png)
+![](imágenes/terminal3.png)
 ```
 
 ## Ejemplo de uso
