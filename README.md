@@ -12,8 +12,6 @@ Implementación del juego AGAR.IO en python utilizando los patrones de diseño d
 
 ## Object Pool
 ```sh
-
-
 ```
 ![](imágenes/object.png)
 ## Observer
@@ -33,15 +31,14 @@ Windows:
 ```sh
 verificación de configuración
 ```
+![](imágenes/terminal1.png)
 ```sh
-Instalación librerira Pygame
+Instalación módulos Pygame para desarrollo de video juegos
 ```
 ![](imágenes/pygame1.png)
 ```sh
 ```
 ![](imágenes/pygame2.png)
-
-![](imágenes/terminal1.png)
 ```sh
 Configuración del servidor
 ```
