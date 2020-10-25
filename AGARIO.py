@@ -14,7 +14,7 @@ import time
 wn = turtle.Screen()
 wn.bgcolor("black")
 wn.title("AGAR.IO Single Player")
-wn.setup(800, 800)
+wn.setup(900, 900)
  
 class Game(turtle.Turtle):
  
