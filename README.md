@@ -8,7 +8,7 @@
 
 Implementación del juego AGAR.IO en python utilizando los patrones de diseño de software Object Pool, Builder y Observer para implementación según diagrama
 
-![](imágenes/header2.png)
+![](imágenes/header.png)
 
 ## Object Pool y Builder
 ```sh
