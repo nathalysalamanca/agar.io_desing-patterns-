@@ -70,8 +70,15 @@ puedan suscribirse o cancelar su suscripción a un flujo de eventos que proviene
 ## Entorno para Ejecución.
 ### Python versión 3.7.0 o superior
 ![](imágenes/python.png)
-Windows:
+Libreria para gráficos Turtle:
 ```sh
+El turtle módulo es una reimplementación extendida del módulo del mismo nombre desde la distribución estándar de Python hasta 
+la versión Python 2.5.
+Intenta mantener los méritos del antiguo módulo Turtle y ser (casi) 100% compatible con él. Esto significa, en primer lugar, 
+permitir que el programador de aprendizaje utilice todos los comandos, clases y métodos de forma interactiva al utilizar el
+módulo desde dentro de la ejecución IDLE con el conmutador.
+El módulo de tortuga proporciona primitivas gráficas de Turtle, tanto en formas orientadas a objetos como orientadas a procedimientos. 
+Debido a que se usa tkinter para los gráficos subyacentes, necesita una versión de Python instalada con soporte Tk
 ```
 ![](imágenes/Terminal.png)
 ```sh
