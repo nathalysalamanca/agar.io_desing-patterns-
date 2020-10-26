@@ -29,7 +29,7 @@ class Game(turtle.Turtle):
         self.x_offset = 0
         self.y_offset = 0
         self.world_size = 500
-        self.colors = ["red", "orange", "green", "blue", "yellow", "purple"]
+        self.colors = ["red", "orange", "blue", "yellow", "purple"]
         self.high_score = 0
  
     def show_score(self):
@@ -178,8 +178,103 @@ class Enemy(turtle.Turtle):
     def destroy(self):
         self.clear()
         self.hideturtle()
-        self.goto(10000, 10000)     
- 
+        self.goto(10000, 10000)  
+#------------Builder Pattern---------
+class Director:
+   __builder = None
+   
+   def setBuilder(self, builder):
+      self.__builder = builder
+   
+   def getObject(self):
+      object = Object()
+      
+      #  color define 
+      color = self.__builder.getColor()
+      object.setColor(color)
+      
+      # size define
+      size = self.__builder.getSize()
+      object.setSize(size)
+      
+      # value define
+      value =  self.__builder.getValue()
+      object.setValue(value)
+
+      return object
+
+# The whole product
+
+class Object(turtle.Turtle):
+   def __init__(self):
+      self.__color = None
+      self.__size = None
+      self.__value = None
+
+   def setColor(self, color):
+      self.__color = color
+
+   def setSize(self, size):
+      self.__size = size
+
+   def setValue(self, value):
+      self.__value = value
+
+   def tostring(self):
+    print ("color: %s" % self.__color)
+    print ("size: %s" % self.__size)
+    print ("value: %s" % self.__value)
+    
+   def drawObject(self):
+    turtle.Turtle.__init__(self)
+    self.penup()
+    self.speed(0)
+    self.color(self.__color)
+    self.shape("circle")
+    self.size = self.__size
+    self.shapesize(stretch_wid=self.size, stretch_len=self.size, outline=None)
+    self.goto(random.randint(-game.world_size, game.world_size), random.randint(-game.world_size, game.world_size))
+
+   def changuePosition(self):
+        print ("OLD ",self.xcor(),"-",self.ycor()) 
+        self.goto(random.randint(-game.world_size, game.world_size), random.randint(-game.world_size, game.world_size))     
+        print ("NEW ",self.xcor(),"-",self.ycor())  
+
+
+class Builder:
+      def getColor(self): pass
+      def getSize(self): pass
+      def getValue(self): pass
+
+class FoodBuilder(Builder):
+   
+   def getColor(self):
+      color = "green yellow"
+      return color
+   
+   def getSize(self):
+      size = 0.3
+      return size
+   
+   def getValue(self):
+       value = 1
+       return value
+
+class VirusBuilder(Builder):
+   
+   def getColor(self):
+      color = "pink"
+      return color
+   
+   def getSize(self):
+      size = 0.7
+      return size
+   
+   def getValue(self):
+       value = -1
+       return value
+#------------Close Builder Pattern---
+   
 #Collision checking function
 #Uses the Pythagorean Theorem to Measure The Distance Between Two Objects
 def isCollision(t1, t2):
@@ -201,9 +296,23 @@ game = Game()
  
 #Create multiple enemies
 enemies = []
-for count in range(50):
+for count in range(5):
     enemies.append(Enemy())
-    
+#Create food pool 
+foods = []
+virusList = []
+for count in range(10):
+    foodBuilder = FoodBuilder() # initializing the class
+    director = Director()
+    director.setBuilder(foodBuilder)
+    food = director.getObject()
+    food.drawObject()
+    foods.append(food)
+    virusBuilder = VirusBuilder() # initializing the class
+    director.setBuilder(virusBuilder)
+    virus = director.getObject()
+    virus.drawObject()
+    virusList.append(virusList)
 #Show the score
 game.show_score()
  
@@ -221,11 +330,21 @@ wn.tracer(0)
 while True:
     wn.update()
     player.move()
- 
+
+    #Iterate through foods
+    for food in foods:
+        #Check for a collision between the player and food
+        if isCollision(player, food): 
+            food.changuePosition()
+            #Increase the player size
+            player.set_size(player.size+0.1)
+            #Update the score
+            game.change_score(game.score+1)
+    
+
     #Iterate through enemies
     for enemy in enemies:
         enemy.move()
- 
         #Check for a collision between the player and goal
         if isCollision(player, enemy):
             #Compare sizes
@@ -240,7 +359,6 @@ while True:
                 game.change_score(enemy.size * 100)
                 #Remove the enemy from the list of enemies
                 enemies.remove(enemy)
- 
             else:
                 game.clear()
                 game.write("GAME OVER...GAME OVER...GAME OVER", False, align="left", font=("Arial",14, "normal"))
@@ -251,8 +369,23 @@ while True:
                 enemies = []
                 #Create multiple enemies
                 enemies = []
-                for count in range(50):
+                for count in range(5):
                     enemies.append(Enemy())
+                #Create food pool 
+                foods = []
+                virusList = []
+                for count in range(10):
+                    foodBuilder = FoodBuilder() # initializing the class
+                    director = Director()
+                    director.setBuilder(foodBuilder)
+                    food = director.getObject()
+                    food.drawObject()
+                    foods.append(food)
+                    virusBuilder = VirusBuilder() # initializing the class
+                    director.setBuilder(virusBuilder)
+                    virus = director.getObject()
+                    virus.drawObject()
+                    virusList.append(virusList)
                 player.set_size(1)
                 if game.score > game.high_score:
                     game.high_score = game.score
@@ -289,10 +422,23 @@ while True:
         wn.update()
         time.sleep(1)
         enemies = []
-        #Create multiple enemies
-        enemies = []
-        for count in range(50):
+        for count in range(5):
             enemies.append(Enemy())
+        #Create food pool 
+        foods = []
+        virusList = []
+        for count in range(10):
+            foodBuilder = FoodBuilder() # initializing the class
+            director = Director()
+            director.setBuilder(foodBuilder)
+            food = director.getObject()
+            food.drawObject()
+            foods.append(food)
+            virusBuilder = VirusBuilder() # initializing the class
+            director.setBuilder(virusBuilder)
+            virus = director.getObject()
+            virus.drawObject()
+            virusList.append(virusList)
         player.set_size(1)
         #Set High Score
         if game.score > game.high_score:
