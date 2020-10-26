@@ -81,9 +81,6 @@ Instalación módulos Pygame para desarrollo de video juegos
 ```
 ![](imágenes/pygame1.png)
 ```sh
-```
-![](imágenes/pygame2.png)
-```sh
 Configuración del servidor
 ```
 ![](imágenes/terminal3.png)
