@@ -9,7 +9,8 @@ import random
 import math
 import os
 import time
- 
+from threading import Thread
+
 #Set up screen
 wn = turtle.Screen()
 wn.bgcolor("black")
@@ -179,6 +180,60 @@ class Enemy(turtle.Turtle):
         self.clear()
         self.hideturtle()
         self.goto(10000, 10000)  
+
+#------------Observer Pattern--------#
+class EventListener(Player):#observable
+    def __init__(self):
+        self._observers_score = set()
+        self._observers_time = set()
+
+    def add_observer_score(self, score):
+        self._observers_score.add(score)
+
+    def remove_observer_score(self, score):
+        self._observers_score.remove(score)
+
+    def notify_observer_score(self, event):
+        for observer in self._observers_score:
+            observer.update(self, event)
+    
+    def add_observer_time(self, time):
+        self._observers_time.add(score)
+
+    def remove_observer_time(self, time):
+        self._observers_time.remove(time)
+
+    def notify_observer_time(self, event):
+        for observer in self._observers_time:
+            observer.update(self, event)
+
+class Score(object):
+    def update(self, observable, event):
+        raise NotImplemented('This method is Abstract!')
+
+class Time(object):
+    def update(self, observable, event):
+        raise NotImplemented('This method is Abstract!')
+
+class TimerObservable(Thread, EventListener):
+    def __init__(self, *args, **kargs):
+        Thread.__init__(self, *args, **kargs)
+        EventListener.__init__(self, *args, **kargs)
+        self._finish = False
+
+    #  def run(self):
+    #     while not self._finish:
+    #         self.fire_event()
+    #         time.sleep(0.1)
+    
+    # def fire_event(self):
+    #     self.notify_observer_time("Time finished!")
+
+    # def stop(self):
+    #     self._finish = True
+    
+
+# ------Close Observer Pattern------#
 #------------Builder Pattern---------
 class Director:
    __builder = None
