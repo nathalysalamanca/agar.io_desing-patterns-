@@ -70,30 +70,20 @@ puedan suscribirse o cancelar su suscripción a un flujo de eventos que proviene
 ## Entorno para Ejecución.
 ### Python versión 3.7.0 o superior
 ![](imágenes/python.png)
-![](imágenes/pygame.png)
 Windows:
 ```sh
-verificación de configuración
 ```
-![](imágenes/terminal1.png)
+![](imágenes/Terminal.png)
 ```sh
-Instalación módulos Pygame para desarrollo de video juegos
+Inicio Partida
 ```
-![](imágenes/pygame1.png)
+![](imágenes/Game1.png)
 ```sh
-Configuración del servidor
+Partida Vencedora
 ```
-![](imágenes/terminal3.png)
+![](imágenes/GameWin.png)
 ```sh
-Configuración cliente
+Partida Perdida
 ```
-![](imágenes/configuracion.png)
-```sh
-Inicio de partida
-```
-![](imágenes/terminal2.png)
-
-```sh
-```
-![](imágenes/juego.png)
+![](imágenes/GameOver.png)
 
