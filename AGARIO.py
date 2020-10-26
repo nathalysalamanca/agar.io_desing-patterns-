@@ -1,9 +1,3 @@
-# Simple Python AGAR.IO Game (Single Player) Demo by @TokyoEdTech
-# YouTube Python Tutorial Channel: 
-# https://www.youtube.com/channel/UC2vm-0XX5RkWCXWwtBZGOXg/playlists
-# Use the arrow keys to move your player and eat the smaller enemies
-# While avoiding the bigger enemies
-# NOTE: This is a work in progress so there is some ugly code
 import turtle
 import random
 import math
